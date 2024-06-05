@@ -10,3 +10,5 @@ setup(
         #'policyengine_canada'
     ],
 )
+
+#sphinx-build /home/tahseer/Desktop/policyengine-test/docs /home/tahseer/Desktop/policyengine-test/docs/_build/html -b html

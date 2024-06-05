@@ -1,0 +1,15 @@
+format: jb-book
+root: intro
+parts:
+  - caption: Contributing
+    chapters:
+    - file: contributing/intro
+  - caption: Using PolicyEngine Python Package
+    chapters:
+    - file: usage/simulation
+    - file: usage/country
+    - file: usage/cli
+    - file: usage/parameters
+    - file: usage/datasets
+    - file: usage/reforms
+    - file: usage/charts
