@@ -1,0 +1,31 @@
+name: Push
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  Deploy_Docs:
+    if: |
+      github.repository == 'masterismail/policyengine-test' &&
+      github.event.head_commit.message == 'Update PolicyEngine test'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      
+      - name: Generate documentation
+        run: make documentation
+      
+      - name: Deploy documentation to GitHub Pages
+        if: github.ref == 'refs/heads/master'
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages  # The branch to deploy the documentation to
+          FOLDER: docs/book/_build/html  # The folder containing the documentation HTML
