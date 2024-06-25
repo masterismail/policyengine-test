@@ -20,7 +20,7 @@ jobs:
           pip install jupyter-book
           pip install ghp-import
           pip install sphinx-math-dollar
-          pip install sphinxarg
+          pip install sphinxarg-argparser
           pip install furo
 
       
