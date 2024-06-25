@@ -18,7 +18,7 @@ jobs:
       - name: install dependencies
         run: |
           pip install jupyter-book
-          
+          pip install furo
         
       
       - name: Generate documentation
