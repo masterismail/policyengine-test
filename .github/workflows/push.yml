@@ -18,7 +18,6 @@ jobs:
       - name: install dependencies
         run: |
           pip install jupyter-book
-          pip install sphinxarg-argparser
           
         
       
