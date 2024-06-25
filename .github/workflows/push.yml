@@ -16,7 +16,13 @@ jobs:
           python-version: 3.9
       
       - name: install dependencies
-        run: pip install jupyter-book sphinx-argparse
+        run: |
+          pip install -r requirements.txt
+          pip install jupyter-book
+          pip install ghp-import
+          pip install sphinx-math-dollar
+          pip install sphinxarg
+          pip install furo
         
       
       - name: Generate documentation
