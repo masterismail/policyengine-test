@@ -19,7 +19,7 @@ jobs:
           python-version: 3.9
       
       - name: Generate documentation
-        run: jupyter-notebook build docs
+        run: make documentation
       
       - name: Deploy documentation to GitHub Pages
         if: github.ref == 'refs/heads/main'
