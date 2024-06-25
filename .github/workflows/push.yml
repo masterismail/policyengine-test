@@ -18,10 +18,8 @@ jobs:
       - name: install dependencies
         run: |
           pip install jupyter-book
-          pip install ghp-import
-          pip install sphinx-math-dollar
           pip install sphinxarg-argparser
-          pip install furo
+          
         
       
       - name: Generate documentation

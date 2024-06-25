@@ -25,5 +25,4 @@ sphinx:
     - sphinxarg.ext
     - sphinx.ext.viewcode
     - sphinx.ext.napoleon
-    - sphinx_math_dollar
     - sphinx.ext.mathjax
