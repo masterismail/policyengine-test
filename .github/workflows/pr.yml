@@ -21,7 +21,7 @@ jobs:
 
       - name: Check documentation build
         run: |
-          if [ -d "docs/book/_build/html" ]; then
+          if [ -d "docs/_build/html" ]; then
             echo "Documentation built successfully"
           else
             echo "Documentation build failed"
