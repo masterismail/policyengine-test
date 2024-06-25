@@ -22,7 +22,7 @@ jobs:
         uses: conda-incubator/setup-miniconda@v2
         with:
           activate-environment: policyengine-test
-          environment-file: environment.yml
+          environment-file: docs/environment.yml
           auto-activate-base: false
       - name: Install package
         shell: bash -l {0}
