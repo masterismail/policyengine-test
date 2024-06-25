@@ -9,6 +9,11 @@ setup(
         'policyengine_uk',
         #'policyengine_canada'
     ],
+     extras_require={
+        "dev": [
+            "black",
+            "jupyter-book",
+            "pytest"
+        ]
+     }
 )
-
-#sphinx-build /home/tahseer/Desktop/policyengine-test/docs /home/tahseer/Desktop/policyengine-test/docs/_build/html -b html

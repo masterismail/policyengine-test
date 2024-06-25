@@ -1,18 +1,12 @@
 # Introduction
 
-This is the documentation for PolicyEngine Core, the open-source Python package powering PolicyEngine's tax-benefit microsimulation models. It is a fork of [OpenFisca-Core](https://github.com/openfisca/openfisca-core), developed and maintained by [OpenFisca](https://www.openfisca.org/).
+The PolicyEngine Python package serves as a unified framework for conducting comprehensive policy simulations and analyses across different countries. Building on the foundation of [OpenFisca-Core](https://github.com/openfisca/openfisca-core), PolicyEngine provides a consistent API that supports diverse functionalities such as microsimulations, individual household analyses, and cross-country comparisons. 
 
-PolicyEngine Core does not simulate any specific tax-benefit policy: instead, it is a general framework for building tax-benefit microsimulation models. It is currently used by PolicyEngine UK and PolicyEngine US, which each define the custom logic, parameters and data required to simulate the tax-benefit systems of the UK and the US respectively. 
+PolicyEngine Core enables users to:
 
-The country models each provide:
+* Simulate and analyze various tax-benefit policies with tailored models for each country.
+* Use two main simulation classes—Microsimulation for broad-scale microdata simulations and IndividualSim for detailed single household calculations.
+* Generate interactive and visually appealing charts using Plotly, facilitating budgetary breakdowns, income decile analyses, poverty breakdowns by demographic groups, and impacts on income inequality.
+* Reproduce visualizations from the PolicyEngine web interface programmatically, allowing for in-depth analysis and customization.
 
-* A set of *entity types* (e.g. `Person`).
-* A set of *parameters* (e.g. `parameters.tax.flat_tax.rate`). Parameters are global data points that have different values for different time periods.
-* A set of *variables* (e.g. `income_tax`). Variables are properties of entities that can be dependent on entities (including other variable values), parameters and the time period.
-
-PolicyEngine Core then enables users to:
-
-* Calculate the value of a variable in a specific time period.
-* Trace the computation tree of a calculation.
-
-PolicyEngine Core also includes many helper functions designed to simplify the process of modelling a country's policy.
+The package aims to streamline policy evaluation by offering a user-friendly API, comprehensive documentation, and tools for generating insightful visual representations of simulation results.
