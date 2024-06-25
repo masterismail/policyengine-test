@@ -65,6 +65,8 @@ jobs:
         run: pip3 uninstall pyyaml && pip3 install pyyaml --no-cache-dir
       - name: Install package
         run: make install
+      - name: Install sphinxcontrib-bibtex
+        run: pip3 uninstall sphinxcontrib-bibtex && pip3 install sphinxcontrib-bibtex      
       - name: Generate documentation
         if: matrix.os == 'ubuntu-latest'
         run: make documentation
