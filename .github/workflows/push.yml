@@ -16,7 +16,8 @@ jobs:
           python-version: 3.9
       
       - name: install dependencies
-        run: pip install jupyter-book
+        run: pip install jupyter-book sphinx-argparse
+        
       
       - name: Generate documentation
         run: make docs
