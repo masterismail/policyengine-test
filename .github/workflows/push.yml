@@ -2,48 +2,7 @@ name: Push
 on:
   push:
     branches: [ main ]
-env:
-  enhanced_frs: ${{ secrets.ENHANCED_FRS}}
 jobs:
-  Lint:
-    runs-on: ubuntu-latest
-    if: |
-      (github.repository == 'masterismail/policyengine-test')
-      && (github.event.head_commit.message == 'Update PolicyEngine UK')
-    steps:
-      - uses: actions/checkout@v2
-      - name: Check formatting
-        uses: "lgeiger/black-action@main"
-        with:
-          args: ". -l 79 --check"
-  versioning:
-    name: Update versioning
-    if: |
-      (github.repository == 'masterismail/policyengine-test')
-      && !(github.event.head_commit.message == 'Update PolicyEngine UK')
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
-        with:
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
-          ref: ${{ github.event.pull_request.head.ref }}
-          token: ${{ secrets.POLICYENGINE_GITHUB }}
-      - name: Setup Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
-      - name: Build changelog
-        run: pip install yaml-changelog && make changelog
-      - name: Preview changelog update
-        run: ".github/get-changelog-diff.sh"
-      - name: Update changelog
-        uses: EndBug/add-and-commit@v8
-        with:
-          add: "."
-          committer_name: Github Actions[bot]
-          author_name: Github Actions[bot]
-          message: Update PolicyEngine UK
   Test:
     runs-on: ${{ matrix.os }}
     if: |
@@ -65,8 +24,6 @@ jobs:
         run: pip3 uninstall pyyaml && pip3 install pyyaml --no-cache-dir
       - name: Install package
         run: make install
-      - name: Install sphinxcontrib-bibtex
-        run: pip3 install sphinxcontrib-bibtex      
       - name: Generate documentation
         if: matrix.os == 'ubuntu-latest'
         run: make documentation
