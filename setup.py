@@ -10,7 +10,7 @@ setup(
         #'policyengine_canada'
     ],
      extras_require={
-        "dev": [
+        "dev": [ 
             "black",
             "jupyter-book",
             "pytest"
