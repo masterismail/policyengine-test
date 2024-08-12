@@ -5,16 +5,16 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="prev" title="How to contribute" href="../contributing/intro.html" />
 
-    <!-- Generated with Sphinx 7.4.5 and Furo 2024.05.06 -->
+    <!-- Generated with Sphinx 7.4.7 and Furo 2024.08.06 -->
         <title>EconomicImpact Class - PolicyEngine</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=387cc868" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
     <link rel="stylesheet" type="text/css" href="../_static/style.css?v=20133b5d" />
     
     
@@ -94,19 +94,6 @@
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
     </svg>
   </symbol>
-  <symbol id="svg-sun-half" viewBox="0 0 24 24">
-    <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
-      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-      <circle cx="12" cy="12" r="9" />
-      <path d="M13 12h5" />
-      <path d="M13 15h4" />
-      <path d="M13 18h1" />
-      <path d="M13 9h4" />
-      <path d="M13 6h1" />
-    </svg>
-  </symbol>
   <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
     <title>Auto light/dark, in light mode</title>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -147,7 +134,7 @@
       <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
       <path d="M13.5 6.5l4 4" />
       <path d="M20 21l2 -2l-2 -2" />
-      <path d="M17 17l-2 2l2 2" /
+      <path d="M17 17l-2 2l2 2" />
     </svg>
   </symbol>
   <symbol id="svg-eye" viewBox="0 0 24 24">
@@ -269,57 +256,8 @@
         <article role="main" id="furo-main-content">
           <section class="tex2jax_ignore mathjax_ignore" id="economicimpact-class">
 <h1>EconomicImpact Class<a class="headerlink" href="#economicimpact-class" title="Link to this heading">¶</a></h1>
-<section id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">EconomicImpact</span></code> class is designed to evaluate the economic impact of a given reform on a specified country. It provides methods to calculate various economic metrics, such as inequality and income distribution, before and after the reform.</p>
-</section>
-<section id="class-initialization">
-<h2>Class Initialization<a class="headerlink" href="#class-initialization" title="Link to this heading">¶</a></h2>
-<section id="economicimpact-reform-country">
-<h3><code class="docutils literal notranslate"><span class="pre">EconomicImpact(reform,</span> <span class="pre">country)</span></code><a class="headerlink" href="#economicimpact-reform-country" title="Link to this heading">¶</a></h3>
-<p>Initializes the <code class="docutils literal notranslate"><span class="pre">EconomicImpact</span></code> class with a specified reform and country.</p>
-<p><strong>Parameters:</strong></p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">reform</span></code> (dict): A dictionary defining the economic reform. The structure of the dictionary should match the expected format for the <code class="docutils literal notranslate"><span class="pre">Reform</span></code> class.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">country</span></code> (str): The country for which the reform’s impact is to be evaluated. Supported values are <code class="docutils literal notranslate"><span class="pre">&quot;uk&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">&quot;us&quot;</span></code>.</p></li>
-</ul>
-<p><strong>Example:</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">policyengine</span> <span class="kn">import</span> <span class="n">EconomicImpact</span>
-
-<span class="n">impact</span> <span class="o">=</span> <span class="n">EconomicImpact</span><span class="p">(</span>
-    <span class="n">reform</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;gov.hmrc.income_tax.rates.uk[0].rate&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;2024-01-01&quot;</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">}},</span>
-    <span class="n">country</span><span class="o">=</span><span class="s2">&quot;uk&quot;</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</section>
-</section>
-<section id="example-usage">
-<h2>Example Usage<a class="headerlink" href="#example-usage" title="Link to this heading">¶</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">policyengine</span> <span class="kn">import</span> <span class="n">EconomicImpact</span>
-
-<span class="c1"># Initialize the EconomicImpact class</span>
-<span class="n">impact</span> <span class="o">=</span> <span class="n">EconomicImpact</span><span class="p">(</span>
-    <span class="n">reform</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;gov.hmrc.income_tax.rates.uk[0].rate&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;2024-01-01&quot;</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">}},</span>
-    <span class="n">country</span><span class="o">=</span><span class="s2">&quot;uk&quot;</span>
-<span class="p">)</span>
-
-<span class="c1"># Calculate the Gini coefficient</span>
-<span class="n">result_gini</span> <span class="o">=</span> <span class="n">impact</span><span class="o">.</span><span class="n">calculate</span><span class="p">(</span><span class="s2">&quot;inequality/gini&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result_gini</span><span class="p">)</span>
-<span class="c1"># Output: {&#39;baseline&#39;: 0.4288962129322326, &#39;reform&#39;: 0.42720356179075414, &#39;change&#39;: -0.001692651141478485}</span>
-
-<span class="c1"># Calculate the top 1% income share</span>
-<span class="n">result_top_1</span> <span class="o">=</span> <span class="n">impact</span><span class="o">.</span><span class="n">calculate</span><span class="p">(</span><span class="s2">&quot;inequality/top_1_pct_share&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result_top_1</span><span class="p">)</span>
-<span class="c1"># Output: {&#39;baseline&#39;: 0.09121853588608866, &#39;reform&#39;: 0.09301056461517446, &#39;change&#39;: 0.0017920287290857928}</span>
-
-<span class="c1"># Calculate the top 10% income share</span>
-<span class="n">result_top_10</span> <span class="o">=</span> <span class="n">impact</span><span class="o">.</span><span class="n">calculate</span><span class="p">(</span><span class="s2">&quot;inequality/top_10_pct_share&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">result_top_10</span><span class="p">)</span>
-<span class="c1"># Output: {&#39;baseline&#39;: 0.3101681771998754, &#39;reform&#39;: 0.31214840219992496, &#39;change&#39;: 0.0019802250000495736}</span>
-</pre></div>
-</div>
+<section id="dfklsdlfk">
+<h2>dfklsdlfk<a class="headerlink" href="#dfklsdlfk" title="Link to this heading">¶</a></h2>
 </section>
 </section>
 
@@ -390,12 +328,7 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">EconomicImpact Class</a><ul>
-<li><a class="reference internal" href="#overview">Overview</a></li>
-<li><a class="reference internal" href="#class-initialization">Class Initialization</a><ul>
-<li><a class="reference internal" href="#economicimpact-reform-country"><code class="docutils literal notranslate"><span class="pre">EconomicImpact(reform,</span> <span class="pre">country)</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#example-usage">Example Usage</a></li>
+<li><a class="reference internal" href="#dfklsdlfk">dfklsdlfk</a></li>
 </ul>
 </li>
 </ul>
@@ -410,7 +343,7 @@
 </div><script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/scripts/furo.js?v=4e2eecee"></script>
+    <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
     <script src="../_static/scripts/sphinx-book-theme.js"></script>
